@@ -9,6 +9,11 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+// spacerConstraint is the horizontal spacer constraint between the activity indicator and the gray view
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *spacerConstraint;
+
+@property (nonatomic, strong) NSLayoutConstraint *widthConstraint;
 
 @end
 
@@ -17,13 +22,26 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	self.activityIndicator.hidesWhenStopped = YES;
+    [self.activityIndicator startAnimating];
 }
 
-- (void)didReceiveMemoryWarning
+- (IBAction)stopButtonTapped:(UIButton *)sender
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [self.activityIndicator stopAnimating];
+    
+    [self.activityIndicator addConstraint:self.widthConstraint];
+    self.spacerConstraint.constant = 0;
+    
 }
+
+- (NSLayoutConstraint *)widthConstraint
+{
+    if (!_widthConstraint) {
+        _widthConstraint = [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1.0f constant:0.0f];
+    }
+    return _widthConstraint;
+}
+
 
 @end
