@@ -7,13 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "NSLayoutConstraint+Ambiguity.h"
 
 @interface ViewController ()
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *activityIndicatorWidthConstraint;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 // spacerConstraint is the horizontal spacer constraint between the activity indicator and the gray view
 @property (strong, nonatomic) IBOutlet NSLayoutConstraint *spacerConstraint;
-
-@property (nonatomic, strong) NSLayoutConstraint *widthConstraint;
 
 @end
 
@@ -22,26 +22,24 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	self.activityIndicator.hidesWhenStopped = YES;
+    
     [self.activityIndicator startAnimating];
 }
 
 - (IBAction)stopButtonTapped:(UIButton *)sender
 {
-    [self.activityIndicator stopAnimating];
+    sender.enabled = NO;
     
-    [self.activityIndicator addConstraint:self.widthConstraint];
+    self.activityIndicatorWidthConstraint.constant = 0;
     self.spacerConstraint.constant = 0;
     
+    [UIView animateWithDuration:1.0 animations:^{
+        self.activityIndicator.alpha = 0.0;
+        [self.view layoutIfNeeded];
+    } completion:^(BOOL finished) {
+       [self.activityIndicator stopAnimating];
+        //[NSLayoutConstraint reportAmbiguity:nil];
+    }];
 }
-
-- (NSLayoutConstraint *)widthConstraint
-{
-    if (!_widthConstraint) {
-        _widthConstraint = [NSLayoutConstraint constraintWithItem:self.activityIndicator attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:0 multiplier:1.0f constant:0.0f];
-    }
-    return _widthConstraint;
-}
-
 
 @end

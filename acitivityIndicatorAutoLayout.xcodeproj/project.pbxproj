@@ -21,6 +21,7 @@
 		393558F718A18137000A8D33 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 393558D918A18137000A8D33 /* UIKit.framework */; };
 		393558FF18A18137000A8D33 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 393558FD18A18137000A8D33 /* InfoPlist.strings */; };
 		3935590118A18137000A8D33 /* acitivityIndicatorAutoLayoutTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3935590018A18137000A8D33 /* acitivityIndicatorAutoLayoutTests.m */; };
+		39E3DA4B18A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.m in Sources */ = {isa = PBXBuildFile; fileRef = 39E3DA4A18A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		393558FC18A18137000A8D33 /* acitivityIndicatorAutoLayoutTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "acitivityIndicatorAutoLayoutTests-Info.plist"; sourceTree = "<group>"; };
 		393558FE18A18137000A8D33 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3935590018A18137000A8D33 /* acitivityIndicatorAutoLayoutTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = acitivityIndicatorAutoLayoutTests.m; sourceTree = "<group>"; };
+		39E3DA4918A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Ambiguity.h"; sourceTree = "<group>"; };
+		39E3DA4A18A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Ambiguity.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 			children = (
 				393558E418A18137000A8D33 /* AppDelegate.h */,
 				393558E518A18137000A8D33 /* AppDelegate.m */,
+				39E3DA4918A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.h */,
+				39E3DA4A18A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.m */,
 				393558E718A18137000A8D33 /* Main.storyboard */,
 				393558EA18A18137000A8D33 /* ViewController.h */,
 				393558EB18A18137000A8D33 /* ViewController.m */,
@@ -252,6 +257,7 @@
 				393558EC18A18137000A8D33 /* ViewController.m in Sources */,
 				393558E618A18137000A8D33 /* AppDelegate.m in Sources */,
 				393558E218A18137000A8D33 /* main.m in Sources */,
+				39E3DA4B18A1A63B003BBB3E /* NSLayoutConstraint+Ambiguity.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +466,7 @@
 				3935590618A18137000A8D33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3935590718A18137000A8D33 /* Build configuration list for PBXNativeTarget "acitivityIndicatorAutoLayoutTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +475,7 @@
 				3935590918A18137000A8D33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

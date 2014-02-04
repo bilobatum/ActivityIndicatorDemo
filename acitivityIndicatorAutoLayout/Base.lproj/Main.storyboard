@@ -28,6 +28,9 @@
                                 <rect key="frame" x="253" y="539" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="QM5-ct-afa"/>
+                                </constraints>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M1I-Ua-lVo" userLabel="Button">
                                 <rect key="frame" x="279" y="534" width="33" height="30"/>
@@ -53,6 +56,7 @@
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="Fri-zn-NQM" id="e3c-eU-JCA"/>
+                        <outlet property="activityIndicatorWidthConstraint" destination="QM5-ct-afa" id="33d-8i-DJL"/>
                         <outlet property="spacerConstraint" destination="bxl-xe-Sqt" id="wGb-BP-exU"/>
                     </connections>
                 </viewController>
